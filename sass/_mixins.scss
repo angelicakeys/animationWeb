@@ -1,0 +1,9 @@
+/******* QUERIES ***********/
+
+@mixin tabletDesktop {
+    @media all and (min-width: 800px) and (max-width:1920px)  {
+        @content
+    }
+    
+}
+

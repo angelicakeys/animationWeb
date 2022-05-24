@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/**********  ACCORDEON *****************************/
+.titreCreation {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgb(133, 187, 133);
+}
+
+.accordeonFlex {
+    display: flex;
+    justify-content: center;
+
+}
+
+.accordeon {
+    width: 800px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.accordeon img {
+    width: 400px;
+    height: auto;
+}
+
+.accordeon .contenuBoite {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.accordeon .contenuBoite .titre {
+    position: relative;
+    padding: 20px;
+    background: #76BFC9;
+    color: white;
+    cursor: pointer;
+}
+
+.accordeon .contenuBoite .titre::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordeon .contenuBoite .contenuText {
+
+    position: relative;
+    background: rgb(223, 114, 114);
+    height: 0px;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+    color: white;
+    font-size: 26px;
+
+}
+
+.contenuText {
+    font-family: 'Barlow Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2.5;
+}
+
+.contenuText p {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.accordeon .contenuBoite.active .titre::before {
+    content: '-';
+}
+
+.accordeon .contenuBoite.active .contenuText {
+    height: auto;
+    padding: 10px;
+
+}
+
+.imageAccordeon {
+    width: auto;
+    height: 50vh;
+}
+
+.imageAccordeon:hover {
+    transform: scale(2);
+}
+
+.titre {
+    font-family: 'Noto Serif', serif;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+}
+
+/**************************************/
+
+/********** 3 IMAGES AU CLICK *******************************/
+.grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    min-height: 20vh;
+    grid-gap: 1rem;
+}
+
+.img-container:hover {
+    border-radius: 0 50px 0 50px;
+    box-shadow: 4px 4px 20px #45acb9;
+    border: none;
+}
+
+.img-container {
+    overflow: hidden;
+    border: 5px solid rgb(171, 238, 171);
+    width: 30vw;
+    height: 50vh;
+    border-radius: 30px 0 30px 0;
+    transition: all ease-in-out 1s;
+}
+
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+
+}
+
+.img-container img:hover {
+    transform: scale(1.2);
+
+}
+
+.survolImage {
+    background-color: #90181C;
+    border: 4px solid blue;
+    display: grid;
+
+}
+
+.imageSelect {
+    background: rgba(230, 20, 20, 0.582);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.25s ease-out;
+    z-index: 10000;
+    /* passe par dessus de l'accordéon */
+}
+
+.imageSelect.ouvre {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.full-img {
+    position: absolute;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(0.5);
+    transition: all 0.25s ease-out;
+}
+
+.full-img.ouvre {
+    transform: translate(-50%, -50%)scale(1);
+}
+
+.imageSelect p {
+    color: white;
+    position: absolute;
+    font-size: 2rem;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+}
+
+.ferme {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    font-size: 100px;
+    cursor: pointer;
+    width: 20%;
+    transform: translate(400%);
+}
+
+
+/********** PROTOTYPES  *********************/
+
+.titrePrototypes {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: center;
+    color: #90181C;
+    width: 100%;
+
+}
+
+section.prototypes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    height: auto;
+    background-color: rgb(171, 238, 171);
+
+}
+
+section.prototypes div {
+    display: flex;
+    width: 300px;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+}
+
+.titrePrototypes {
+    display: flex;
+    justify-content: center;
+}
+
+.prototypes div:hover {
+    box-shadow: 5px 5px 5px 5px#90181C;
+    ;
+}
+
+/********* SECTION GOOGLE WEB DESIGNER  ***********/
+
+#englobeDivGoogle {
+    background-color: #90181C;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @include tabletDesktop {
+        flex: 2 2 5%;
+
+    }
+}
+
+.google {
+    display: flex;
+    flex-direction: column;
+    background-color: #90181C;
+    color: white;
+
+    @include tabletDesktop {
+        flex-direction: row;
+    }
+
+
+}
+
+.titreGoogle {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    color: white;
+    padding: 0.5em;
+}
+
+.googleImages {
+    width: 100%;
+    justify-content: center;
+
+    @include tabletDesktop {
+        flex: 1 1 5%;
+    }
+
+}
+
+.googleDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include tabletDesktop {
+        flex: 1 1 5%;
+    }
+
+}
+
+.textGoogle {
+    font-family: 'Noto Serif', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    flex-wrap: wrap;
+
+    @include tabletDesktop {
+        align-items: center;
+    }
+}
+
+
+.googleImages {
+    width: 100%;
+    justify-content: center;
+    flex: 1 1 5%;
+}
